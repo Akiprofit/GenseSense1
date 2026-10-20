@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Well Do You Know GMOs? - GeneSense</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo"><a href="../index.html" class="logo-home" aria-label="GeneSense home"><img src="../image/genesense-logo.png" alt="GeneSense" class="logo-icon">
+                    <span class="logo-text">GeneSense</span></a></div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="nav-link">HOME</a></li>
+                    <li><a href="articles.html" class="nav-link">ARTICLES</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">EXPLORE ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="health.html">Human Health</a></li>
+                            <li><a href="ethics.html">Ethics</a></li>
+                            <li><a href="society.html">Society</a></li><li><a href="glossary.html">Glossary</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="case-studies.html" class="nav-link">CASE STUDIES</a></li>
+                    <li><a href="interactive.html" class="nav-link active">QUIZ</a></li>
+                    <li><a href="about.html" class="nav-link">ABOUT US</a></li>
+                    <li><a href="references.html" class="nav-link">REFERENCES</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- QUIZ PAGE -->
+    <section class="quiz-page-container">
+        <div class="quiz-wrapper">
+            <div class="quiz-header">
+                <h1>How Well Do You Know GMOs?</h1>
+                <p>10 questions. 5 minutes. See what you actually understand about genetic modification, health, and ethics.</p>
+            </div>
+
+            <div class="quiz-content">
+                <!-- INTRO SCREEN -->
+                <div id="quiz-intro" class="quiz-intro">
+                    <p>This quiz tests your knowledge of what we've covered on GeneSense. You'll get instant feedback on every answer—whether you're right or wrong, you'll learn something.</p>
+                    <p><strong>No score counting against you. Just knowledge.</strong></p>
+                    <button class="btn btn-primary btn-large" onclick="startQuiz()">Start Quiz Now</button>
+                </div>
+
+                <!-- QUIZ QUESTIONS (hidden by default) -->
+                <div id="quiz-questions" style="display: none;">
+                    <!-- Question 1 -->
+                    <div class="quiz-question">
+                        <div class="question-number">Question 1 of 10</div>
+                        <div class="question-text">What does GMO stand for?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(0, this)">
+                                A) Genetically Modified Organism
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(0, this)">
+                                B) Generally Modified Organism
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(0, this)">
+                                C) Genetically Managed Organism
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(0, this)">
+                                D) Genetic Market Optimization
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-0">
+                            <p><strong>✓ Correct.</strong> GMO stands for Genetically Modified Organism—an organism whose DNA has been deliberately altered using biotechnology.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 2 of 10</div>
+                        <div class="question-text">How long have GMO crops been commercially available?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(1, this)">
+                                A) Since the 1960s
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(1, this)">
+                                B) Since the 1980s
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(1, this)">
+                                C) Since the mid-1990s
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(1, this)">
+                                D) Since 2010
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-1">
+                            <p><strong>✓ Correct.</strong> GeneSense explains that GMO crops have been grown commercially since the mid-1990s. See the “Introduction to GMOs” section in the Articles and Human Health pages.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 3 of 10</div>
+                        <div class="question-text">What is Golden Rice designed to address?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(2, this)">
+                                A) Pest resistance in crops
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(2, this)">
+                                B) Vitamin A deficiency
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(2, this)">
+                                C) Soil contamination
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(2, this)">
+                                D) Climate change adaptation
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-2">
+                            <p><strong>✓ Correct.</strong> Golden Rice is engineered to produce beta-carotene (which the body converts to vitamin A). Vitamin A deficiency affects millions globally, particularly in developing countries.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 4 of 10</div>
+                        <div class="question-text">What do major scientific organizations conclude about GMO food safety?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(3, this)">
+                                A) GMOs are completely risk-free
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(3, this)">
+                                B) Approved GMO foods are as safe as conventional crops
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(3, this)">
+                                C) GMOs are inherently dangerous
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(3, this)">
+                                D) GMO safety is still unknown
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-3">
+                            <p><strong>✓ Correct.</strong> The paper summarizes WHO (2014) and NASEM (2016): evidence has not shown approved GMO foods to be less safe than conventional counterparts. Assessment must still be product-specific, and continued research and oversight remain important. See Human Health and References.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 5 of 10</div>
+                        <div class="question-text">Which ethical issue is NOT typically part of the GMO debate?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(4, this)">
+                                A) Consumer right to know/GMO labeling
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(4, this)">
+                                B) Corporate power and patents
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(4, this)">
+                                C) The color of vegetable packaging
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(4, this)">
+                                D) Farmer autonomy and seed-saving rights
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-4">
+                            <p><strong>✓ Correct.</strong> GeneSense discusses labeling and consumer choice, patents and corporate control, and farmer autonomy. Packaging color is not one of the ethical issues reviewed. See Ethics and Society.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 6 of 10</div>
+                        <div class="question-text">What is Bt technology used for in GMO crops?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(5, this)">
+                                A) Making crops grow faster
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(5, this)">
+                                B) Increasing nutritional content
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(5, this)">
+                                C) Providing natural pest resistance
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(5, this)">
+                                D) Improving soil quality
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-5">
+                            <p><strong>✓ Correct.</strong> Bt is short for Bacillus thuringiensis, a soil bacterium whose genes can help crops resist specific insect pests. GeneSense discusses Bt crops in Human Health, Articles, and Case Studies; outcomes depend on crop and context.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 7 of 10</div>
+                        <div class="question-text">Which region has mandatory GMO labeling?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(6, this)">
+                                A) The United States
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(6, this)">
+                                B) The European Union
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(6, this)">
+                                C) Most developing countries
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(6, this)">
+                                D) Australia only
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-6">
+                            <p><strong>✓ Correct.</strong> GeneSense explains that the European Union requires GMO labeling under its rules, while regulatory approaches differ by region. See Ethics and the Society article on access and labeling.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 8 of 10</div>
+                        <div class="question-text">What is a key ethical concern about GMO patents?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(7, this)">
+                                A) They prevent farmers from saving and replanting seeds
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(7, this)">
+                                B) They make seeds more expensive
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(7, this)">
+                                C) They reduce farmer autonomy
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(7, this)">
+                                D) All of the above
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-7">
+                            <p><strong>✓ Correct.</strong> GeneSense describes concerns that patents may restrict seed-saving, increase seed costs, and reduce farmer autonomy. See Ethics and Society.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 9 of 10</div>
+                        <div class="question-text">How do GMO crops potentially impact food security?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(8, this)">
+                                A) Higher yields could feed more people on less land
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(8, this)">
+                                B) Climate-resistant crops could help adapt to changing conditions
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(8, this)">
+                                C) But over-reliance on few varieties creates vulnerability
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(8, this)">
+                                D) All of the above
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-8">
+                            <p><strong>✓ Correct.</strong> GeneSense presents potential benefits such as improved yields and adaptation to some growing conditions, alongside concerns such as resistance and reduced crop diversity. Food security also depends on access, affordability, and wider social conditions. See Society and the related articles.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="quiz-question" style="display: none;">
+                        <div class="question-number">Question 10 of 10</div>
+                        <div class="question-text">What's the main message of GeneSense?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="checkAnswer(9, this)">
+                                A) GMOs are always safe and should be everywhere
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(9, this)">
+                                B) GMOs are dangerous and should be banned
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(9, this)">
+                                C) GMOs are a tool with benefits and concerns that deserve critical thinking
+                            </div>
+                            <div class="quiz-option" onclick="checkAnswer(9, this)">
+                                D) GMOs don't matter to society
+                            </div>
+                        </div>
+                        <div class="quiz-feedback" id="feedback-9">
+                            <p><strong>✓ Correct.</strong> GeneSense presents GMOs as a technology with potential benefits and risks. It emphasizes evaluating evidence, product-specific safety, ethical concerns, environmental effects, and social impacts rather than treating all GMOs as uniformly good or bad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RESULTS SCREEN -->
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <h2>Your Results</h2>
+                    <div class="score-display" id="final-score">0/10</div>
+                    <div class="score-message" id="score-message">Good effort. Keep learning.</div>
+                    <div class="score-breakdown">
+                        <p>You got <span id="correct-count">0</span> out of 10 correct.</p>
+                        <p>Review the articles to strengthen areas where you had questions.</p>
+                    </div>
+                    <div class="quiz-buttons">
+                        <button class="btn btn-primary" onclick="restartQuiz()">Take Quiz Again</button>
+                        <a href="articles.html" class="btn btn-outline">Read More Articles</a>
+                    </div>
+                </div>
+
+                <!-- NAVIGATION BUTTONS -->
+                <div id="quiz-nav" class="quiz-buttons" style="display: none; margin-top: 2rem;">
+                    <button class="btn btn-outline" onclick="previousQuestion()" id="prev-btn">← Back</button>
+                    <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn">Next →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GeneSense</h3>
+                    <p>Research-based exploration of GMO ethics, science, and society.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="interactive.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="health.html">Human Health</a></li>
+                        <li><a href="ethics.html">Ethics</a></li>
+                        <li><a href="society.html">Society</a></li><li><a href="glossary.html">Glossary</a></li>
+                        <li><a href="references.html">References</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="references.html">Sources</a></li>
+                        <li><a href="about.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GeneSense. An STS Research Project on the Ethical Implications of GMOs to Human Health and Society.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/quiz.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
